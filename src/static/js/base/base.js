@@ -13,7 +13,6 @@ if (!Element.prototype.hasAttribute) {
 
 	/* Hide the form-based language selector and show the ul-based one. */
 	$('form.navbar-lang').hide();
-	$('ul.navbar-lang').show();
 
 	/* Set the correct language option to the hidden form and submit. */
 	$('ul.navbar-lang ul.dropdown-menu a').click(function() {

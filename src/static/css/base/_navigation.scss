@@ -68,15 +68,35 @@
         border: #fff;
     }
 
-    .navbar-collapse.in {
+    .navbar-collapse {
         @media (max-width: $grid-float-breakpoint-max) {
             .navbar-lang {
+                display: block;
+                position: absolute;
+                top: 5px;
+                width: 60%;
+                height: 72px;
+                -webkit-animation-duration: 1s;
+                animation-duration: 1s;
+                -webkit-animation-fill-mode: both;
+                animation-fill-mode: both;
+            }
+
+            &.collapsing .navbar-lang {
+                opacity: 0;
+            }
+
+            &.in .navbar-lang {
+                display: block;
                 position: absolute;
                 top: 5px;
                 width: 60%;
                 height: 72px;
                 background-color: $theme-color;
+                -webkit-animation-name: fadeIn;
+                animation-name: fadeIn;
             }
+
             .navbar-nav > li > a.active{
                 border-bottom: none;
             }
@@ -97,7 +117,7 @@
     ul.navbar-lang {
         // By default the js powered language selector is hidden
         // This selector is enabled in js/base.js
-        display: none;
+        // display: none;
     }
 
     .navbar-lang {
